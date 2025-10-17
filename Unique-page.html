@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiche du livre - OpenBookHouse</title>
+    <link rel="stylesheet" href="Unique-page.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/logos/house.png" alt="logo OpenBookHouse" />
+      </div>
+
+      <nav>
+        <input type="checkbox" id="Affiche-menu" />
+        <label for="Affiche-menu" class="menu">
+          <img src="icons/menu_16410453.png" alt="menu" />
+        </label>
+
+        <menu class="affichemenu">
+          <a
+            href="#index.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Accueil</a
+          >
+          <a
+            href="/Tous-les-livres.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Tous les livres</a
+          >
+          <a
+            href="#"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Proposer un livre</a
+          >
+          <a
+            href="#"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >FAQ</a
+          >
+          <a
+            href="#"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Contacter</a
+          >
+          <a
+            href="/A-propos.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >À propos</a
+          >
+          <a
+            href="#"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Propriétaire du site</a
+          >
+        </menu>
+      </nav>
+    </header>
+
+    <section class="titre-section">
+      <div class="cercle"></div>
+      <h2>Fiche d'identité<br />du livre</h2>
+    </section>
+
+    <section class="fiche-livre">
+      <div class="image-livre">
+        <img
+          src="/images/Rectangle 7.png"
+          alt="Couverture du livre The Wicked"
+        />
+      </div>
+
+      <div class="infos-livre">
+        <h3>The Wicked</h3>
+
+        <p>
+          <strong>Titre original :</strong>
+          <a href="#"
+            >Wicked: The Life And Times Of The Wicked Witch Of The West</a
+          >
+        </p>
+        <p>
+          <strong>Titre français :</strong>
+          <a href="#"
+            >Wicked : Les Vies Et Les Aventures De La Méchante Sorcière De
+            L'Ouest</a
+          >
+        </p>
+        <p><strong>Auteur :</strong> <span>Gregory Maguire</span></p>
+        <p><strong>Langue d'origine :</strong> <span>Anglais</span></p>
+        <p><strong>Date de publication :</strong> <span>1995</span></p>
+        <p>
+          <strong>Nombre de pages :</strong>
+          <span>Environ 400 (varie selon l'édition)</span>
+        </p>
+
+        <div class="apercu">
+          <h4>◆ Aperçu du livre</h4>
+          <p>
+            A born to impress some girls by associating the words to find a
+            house where a witch sits with her life and the landscape around her,
+            and how that has to depend on the others to keep things secret. She
+            has ambitions but not the bad ones. A tragic comedy of good and
+            evil, love and truth, and the heavy things of the choice of choosing
+            within a life and its back and forth on the hurt.
+          </p>
+        </div>
+
+        <div class="evaluation">
+          <h4>◆ Évaluation des lecteurs</h4>
+          <div class="stars">
+            <img src="/images/Rectangle.png" alt="" />
+          </div>
+        </div>
+
+        <div class="btn-retour">
+          <button onclick="window.location.href='index.html'">← Retour</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div class="lvr-card">
+        <img src="images/Riyad.jpeg" alt="" />
+        <h3>Riyad-salihin</h3>
+      </div>
+      <div class="lvr-card">
+        <img src="/images/Rectangle 8.png" alt="Harry Potter" />
+        <h3>Harry Potter</h3>
+      </div>
+      <div class="lvr-card">
+        <img src="/images/Rectangle 9.png" alt="Work: A Life Well Lived" />
+        <h3>Work: A Life Well Lived</h3>
+      </div>
+      <div class="lvr-card">
+        <img src="/images/Rectangle 10.png" alt="Howl's Moving Castle" />
+        <h3>Howl's Moving Castle</h3>
+      </div>
+      <div class="lvr-card">
+        <img src="/images/Rectangle 11.png" alt="Well Wanted" />
+        <h3>Well Wanted</h3>
+      </div>
+
+      <div class="lvr-card">
+        <img src="/images/Rectangle 12.png" alt="The Wicked" />
+        <h3>The Wicked</h3>
+      </div>
+      <div class="lvr-card">
+        <img src="/images/Rectangle 13.png" alt="Frozen" />
+        <h3>Frozen</h3>
+      </div>
+      <div class="lvr-card">
+        <img src="/images/Rectangle 14.png" alt="Work: A Life Well Lived" />
+        <h3>Work: A Life Well Lived</h3>
+      </div>
+      <div class="lvr-card">
+        <img src="/images/Rectangle 15.png" alt="Howl's Moving Castle" />
+        <h3>Howl's Moving Castle</h3>
+      </div>
+      <div class="lvr-card">
+        <img src="/images/Rectangle 16.png" alt="Well Wanted" />
+        <h3>Well Wanted</h3>
+      </div>
+    </div>
+    <!-- FOOTER -->
+    <footer>
+      <h2>OpenBookHouse</h2>
+      <p>Find & Explore Library Books List</p>
+    </footer>
+  </body>
+</html>

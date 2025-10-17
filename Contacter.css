@@ -1,0 +1,269 @@
+/* -------------------- Police -------------------- */
+@font-face {
+  font-family: "Bosca";
+  src: url("/fonts/Bosca-Regular.woff2") format("woff2"),
+    url("/fonts/Bosca-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+/* -------------------- Variables -------------------- */
+:root {
+  --font-main: "Bosca", serif;
+  --primary-color: #54bab9;
+  --light-bg: #faf7f3;
+  --dark-color: #111;
+  --white: #fff;
+}
+
+/* -------------------- Reset -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------- Body -------------------- */
+body {
+  font-family: var(--font-main), "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-color);
+  text-align: center;
+}
+
+/* -------------------- Header -------------------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+  height: 80px;
+}
+
+nav {
+  position: relative;
+}
+
+#Affiche-menu {
+  display: none;
+}
+
+.menu img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#Affiche-menu:checked + .menu img {
+  transform: rotate(90deg);
+}
+
+menu {
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease;
+  z-index: 50;
+}
+
+#Affiche-menu:checked ~ menu {
+  display: flex;
+}
+
+menu a {
+  background-color: var(--primary-color);
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+menu a:hover {
+  background-color: black;
+  color: var(--primary-color);
+}
+
+/* -------------------- Citation -------------------- */
+.citation {
+  display: flex;
+  text-align: center;
+  font-weight: 900;
+  margin: 60px auto 40px;
+  position: relative;
+}
+
+.citation .texte {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--dark-color);
+  position: relative;
+  left: 36%;
+  white-space: pre;
+  z-index: 2;
+}
+.citation .cercle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* -------------------- Intro -------------------- */
+.intro {
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* -------------------- Formulaire -------------------- */
+.formulaire form {
+  width: 85%;
+  max-width: 380px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Champs modernes sans bord externe */
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 25px;
+  background-color: #f8f9fa; /* fond doux */
+  font-family: var(--font-main);
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+/* Placeholder gris clair */
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
+
+/* Effet focus turquoise */
+input:focus,
+textarea:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 2px rgba(84, 186, 185, 0.3);
+}
+
+/* Textarea arrondi */
+textarea {
+  border-radius: 12px;
+  resize: vertical;
+}
+
+/* Bouton élégant */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  align-self: center;
+}
+
+button:hover {
+  background-color: #3fa7a5;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 60px;
+}
+
+footer p {
+  color: var(--primary-color);
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .infolivre {
+    flex-direction: column;
+  }
+
+  .infolivre img {
+    width: 100%;
+  }
+
+  .infolivre .text {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 30px;
+  }
+
+  .recherche .champ {
+    width: 90%;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .citation .texte {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    margin: 0 20px;
+  }
+
+  .tendens,
+  .Annons {
+    margin: 20px;
+  }
+
+  .infolivre {
+    text-align: center;
+  }
+}

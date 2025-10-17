@@ -1,0 +1,323 @@
+/* -------------------- Police personnalisée -------------------- */
+@font-face {
+  font-family: 'Bosca';
+  src: url('/fonts/Bosca-Regular.woff2') format('woff2'),
+       url('/fonts/Bosca-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------- Variables globales -------------------- */
+:root {
+  --font-main: 'Bosca', serif;
+  --primary-color: #54bab9;
+  --dark-color: #111;
+  --gray-color: #777;
+  --light-bg: #faf7f3;
+  --white: #fff;
+  --accent-color: #d2f1ee;
+}
+
+/* -------------------- Réinitialisation -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------- Corps de page -------------------- */
+body {
+  font-family: var(--font-main), "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-color);
+  overflow-x: hidden;
+}
+
+/* -------------------- Header -------------------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+header .logo img {
+  height: 140px;
+  width: auto;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#Affiche-menu {
+  display: none;
+}
+
+.menu img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#Affiche-menu:checked + .menu img {
+  transform: rotate(90deg);
+}
+
+menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  border-radius: 10px;
+  padding: 12px;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease forwards;
+  z-index: 10;
+}
+
+#Affiche-menu:checked ~ menu {
+  display: flex;
+}
+
+nav:hover menu {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+menu a {
+  background-color: #54bab9;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+menu a:hover,
+menu a:active {
+  background-color: black;
+  color: #54bab9;
+  transform: translateX(4px);
+}
+/* -------------------- Citation -------------------- */
+.citation {
+  text-align: center;
+  font-weight: 900;
+  margin: 60px auto 40px;
+  position: relative;
+}
+
+.citation .texte {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--dark-color);
+  position: relative;
+  left: -7%;
+  top: -40%;   
+  white-space: pre;
+  z-index: 2;
+}
+
+.citation .cercle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.8;
+}
+
+/* -------------------- Barre de recherche -------------------- */
+.recherche {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+.recherche .champ {
+  display: flex;
+  width: 500px;
+  background-color: var(--white);
+  border: 2px solid var(--dark-color);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.recherche input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.recherche button {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.recherche button:hover {
+  background-color: #3fa8a7;
+}
+
+.recherche button img {
+  width: 22px;
+  height: 22px;
+}
+
+
+
+
+/* --- Grille de livres --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  margin: 0 80px;
+}
+
+.lvr-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.lvr-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.lvr-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.lvr-card h3 {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.lvr-card p {
+  color: var(--gray-color);
+  font-size: 14px;
+}
+
+
+
+
+
+/* -------------------- Footer -------------------- */
+footer {
+  background-color: #000;
+    color: #fff;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 80px;
+}
+
+footer img {
+
+  width: 60px;
+  margin-bottom: 10px;
+}
+img.logo {
+  filter: brightness(0) invert(1);
+}
+
+
+footer p {
+    color: var(--primary-color);
+
+  font-size: 16px;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .infolivre {
+    flex-direction: column;
+  }
+
+  .infolivre img {
+    width: 100%;
+  }
+
+  .infolivre .text {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 30px;
+  }
+
+  .recherche .champ {
+    width: 90%;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .citation .texte {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    margin: 0 20px;
+  }
+
+  .tendens, .Annons {
+    margin: 20px;
+  }
+
+  .infolivre {
+    text-align: center;
+  }
+}

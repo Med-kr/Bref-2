@@ -1,0 +1,200 @@
+
+    /* -------------------- Police personnalisée -------------------- */
+@font-face {
+  font-family: 'Bosca';
+  src: url('/fonts/Bosca-Regular.woff2') format('woff2'),
+       url('/fonts/Bosca-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -------------------- Variables globales -------------------- */
+:root {
+  --primary-color: #54bab9;
+  --dark-color: #111;
+  --gray-color: #777;
+  --light-bg: #faf7f3;
+  --white: #fff;
+}
+
+/* -------------------- Réinitialisation -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Bosca', 'Poppins', sans-serif;
+  background-color: var(--light-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* -------------------- Container principal -------------------- */
+.login-container {
+  text-align: center;
+  background-color: transparent;
+  padding: 30px 20px;
+  width: 340px;
+}
+
+/* -------------------- Logo -------------------- */
+.logo img {
+  width: 300px;
+  height: auto;
+  margin-bottom: 8px;
+}
+
+.logo h1 {
+  font-size: 18px;
+  color: var(--dark-color);
+  margin-bottom: 15px;
+}
+
+/* -------------------- Texte d’intro -------------------- */
+.intro h2 {
+  font-size: 16px;
+  color: var(--dark-color);
+  margin-bottom: 4px;
+}
+
+.intro p {
+  font-size: 12px;
+  color: var(--gray-color);
+  margin-bottom: 25px;
+}
+
+/* -------------------- Formulaire -------------------- */
+.login-form input {
+  width: 100%;
+  background-color: #dedede;
+  border: none;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 3px;
+  color: var(--white);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #4aa5a4;
+}
+
+/* -------------------- Liens -------------------- */
+.links {
+  font-size: 12px;
+  color: var(--dark-color);
+  margin-top: 20px;
+}
+
+.links a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.links .forgot {
+  margin-top: 8px;
+  color: var(--gray-color);
+}
+
+/* -------------------- Séparateur -------------------- */
+.divider {
+  margin: 25px 0 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--dark-color);
+}
+
+/* -------------------- Réseaux sociaux -------------------- */
+.social-login {
+    display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-login img {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-login img:hover {
+    transform: scale(1.1);
+}
+
+/* -------------------- Résponsive -------------------- */
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .infolivre {
+    flex-direction: column;
+  }
+
+  .infolivre img {
+    width: 100%;
+  }
+
+  .infolivre .text {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 30px;
+  }
+
+  .recherche .champ {
+    width: 90%;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .citation .texte {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    margin: 0 20px;
+  }
+
+  .tendens, .Annons {
+    margin: 20px;
+  }
+
+  .infolivre {
+    text-align: center;
+  }
+}
+

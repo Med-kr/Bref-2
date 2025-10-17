@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proposez un livre</title>
+    <link rel="stylesheet" href="Proposer-un-livre.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/logos/house.png" alt="logo OpenBookHouse" />
+      </div>
+
+      <nav>
+        <input type="checkbox" id="Affiche-menu" />
+        <label for="Affiche-menu" class="menu">
+          <img src="icons/menu_16410453.png" alt="menu" />
+        </label>
+
+        <menu class="affichemenu">
+          <a
+            href="/index.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Accueil</a
+          >
+          <a
+            href="/Tous-les-livres.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Tous les livres</a
+          >
+          <a
+            href="/Proposer-un-livre.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Proposer un livre</a
+          >
+          <a
+            href="/FAQ.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >FAQ</a
+          >
+          <a
+            href="/Contacter.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Contacter</a
+          >
+          <a
+            href="/A-propos.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >À propos</a
+          >
+          <a
+            href="/Propriétaire-du-site.html"
+            onclick="document.getElementById('Affiche-menu').checked=false;"
+            >Propriétaire du site</a
+          >
+        </menu>
+      </nav>
+    </header>
+    <section class="formulaire-section">
+      <div class="titre">
+        <div class="cercle"></div>
+        <h2>Proposez un livre pour<br />notre bibliothèque</h2>
+      </div>
+
+      <form class="formulaire">
+        <label for="nom-livre">Nom de livre</label>
+        <input
+          type="text"
+          id="nom-livre"
+          name="nom-livre"
+          placeholder="Nom de livre"
+          required
+        />
+
+        <label for="auteur">Nom de léauteur</label>
+        <input
+          type="text"
+          id="auteur"
+          name="auteur"
+          placeholder="Nom de l'auteur"
+          required
+        />
+
+        <label for="raison">Pourquoi ce livre ?</label>
+        <textarea
+          id="raison"
+          name="raison"
+          rows="5"
+          placeholder="Expliquez pourquoi ce livre mérite d’être ajouté..."
+        ></textarea>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <footer>
+      <h2>OpenBookHouse</h2>
+      <p>Med-kr Library Books List</p>
+    </footer>
+  </body>
+</html>

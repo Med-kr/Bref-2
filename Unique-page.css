@@ -1,0 +1,243 @@
+/* -------------------- Police et variables -------------------- */
+@font-face {
+  font-family: 'Bosca';
+  src: url('/fonts/Bosca-Regular.woff2') format('woff2'),
+       url('/fonts/Bosca-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+:root {
+  --font-main: 'Bosca', serif;
+  --primary-color: #54bab9;
+  --dark-color: #111;
+  --gray-color: #777;
+  --light-bg: #faf7f3;
+  --white: #fff;
+}
+
+/* -------------------- Reset -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------- Corps -------------------- */
+body {
+  font-family: var(--font-main), "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* -------------------- Header -------------------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+  height: 120px;
+  width: auto;
+}
+
+/* Menu */
+nav { position: relative; display: flex; align-items: center; }
+#Affiche-menu { display: none; }
+
+.menu img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#Affiche-menu:checked + .menu img { transform: rotate(90deg); }
+
+menu {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: var(--white);
+  border-radius: 10px;
+  padding: 12px;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+#Affiche-menu:checked ~ menu { display: flex; }
+
+menu a {
+  background-color: var(--primary-color);
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+menu a:hover { background-color: black; color: var(--primary-color); }
+
+/* -------------------- Section titre -------------------- */
+.titre-section {
+  text-align: center;
+  margin: 60px 0 40px;
+  position: relative;
+}
+
+.titre-section .cercle {
+  width: 90px;
+  height: 90px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  opacity: 0.85;
+}
+
+.titre-section h2 {
+  position: relative;
+  z-index: 2;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+/* -------------------- Fiche livre -------------------- */
+.fiche-livre {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin: 0 80px 80px;
+}
+
+.image-livre img {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.infos-livre { max-width: 600px; }
+.infos-livre h3 { font-size: 28px; margin-bottom: 15px; }
+.infos-livre p { margin: 6px 0; font-size: 16px; }
+.infos-livre a { color: var(--primary-color); text-decoration: none; }
+.infos-livre a:hover { text-decoration: underline; }
+
+/* Aperçu */
+.apercu { margin-top: 25px; }
+.apercu h4 { margin-bottom: 10px; }
+.apercu p { text-align: justify; }
+
+/* Évaluation */
+.evaluation { margin-top: 25px; }
+.evaluation h4 { font-size: 20px; }
+.evaluation .stars img { height: 150px; width: auto; }
+
+/* Bouton retour */
+.btn-retour { margin-top: 30px; }
+.btn-retour button {
+  border: 1.5px solid var(--dark-color);
+  background: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.btn-retour button:hover {
+  background-color: var(--dark-color);
+  color: var(--white);
+}
+
+/* -------------------- Livres similaires -------------------- */
+.livres-similaires {
+  margin: 0 80px 80px;
+}
+.livres-similaires h3 {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  margin: 0 80px;
+}
+
+.lvr-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.lvr-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.lvr-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.lvr-card h3 {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.lvr-card p {
+  color: var(--gray-color);
+  font-size: 14px;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 40px 0;
+}
+footer p { color: var(--primary-color); font-size: 15px; }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 480px) {
+  header { padding: 10px 20px; }
+  header .logo img { height: 80px; }
+  .fiche-livre { flex-direction: column; margin: 0 20px; gap: 30px; }
+  .image-livre img { width: 180px; margin: 0 auto; display: block; }
+  .infos-livre { text-align: center; }
+  .titre-section h2 { font-size: 22px; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .fiche-livre { flex-direction: column; align-items: center; margin: 0 40px; }
+  .image-livre img { width: 250px; }
+  .infos-livre { text-align: center; }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .fiche-livre { margin: 0 60px 80px; gap: 40px; }
+  .image-livre img { width: 300px; }
+}
+
+@media (min-width: 1200px) {
+  .fiche-livre { margin: 0 120px 100px; }
+  .image-livre img { width: 400px; }
+}

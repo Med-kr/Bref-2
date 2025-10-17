@@ -1,0 +1,188 @@
+/* -------------------- Police personnalisée -------------------- */
+@font-face {
+  font-family: "Bosca";
+  src: url("/fonts/Bosca-Regular.woff2") format("woff2"),
+    url("/fonts/Bosca-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+/* -------------------- Variables globales -------------------- */
+:root {
+  --font-main: "Bosca", serif;
+  --primary-color: #54bab9;
+  --dark-color: #111;
+  --gray-color: #777;
+  --light-bg: #faf7f3;
+  --white: #fff;
+}
+
+/* -------------------- Réinitialisation -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------------- Corps de page -------------------- */
+body {
+  font-family: var(--font-main), "Poppins", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-color);
+  overflow-x: hidden;
+}
+
+/* -------------------- Header -------------------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background-color: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+  height: 100px;
+  width: auto;
+}
+
+header .logo h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* -------------------- Section Formulaire -------------------- */
+.formulaire-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.titre {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.titre .cercle {
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.titre h2 {
+  position: relative;
+  font-size: 26px;
+  font-weight: 500;
+  z-index: 2;
+  color: var(--dark-color);
+}
+
+/* -------------------- Formulaire -------------------- */
+.formulaire {
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formulaire label {
+  font-weight: 600;
+  color: var(--dark-color);
+  text-align: left;
+}
+
+.formulaire input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: 1.5px solid var(--dark-color);
+  background-color: var(--white);
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.formulaire input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(84, 186, 185, 0.5);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  align-self: center;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #3fa8a7;
+  transform: translateY(-2px);
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 80px;
+}
+
+footer p {
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .titre h2 {
+    font-size: 22px;
+  }
+
+  .titre .cercle {
+    width: 50px;
+    height: 50px;
+    left: -30px;
+  }
+
+  .formulaire {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titre h2 {
+    font-size: 20px;
+  }
+
+  .formulaire input {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+}
