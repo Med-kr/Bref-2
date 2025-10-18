@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="Accueil.css" />
     <title>Accueil</title>
   </head>
   <body>
@@ -12,56 +12,32 @@
         <img src="logos/house.png" alt="logo OpenBookHouse" />
       </div>
 
-      <nav>
-        <input type="checkbox" id="Affiche-menu" />
-        <label for="Affiche-menu" class="menu">
-          <img src="icons/menu_16410453.png" alt="menu" />
-        </label>
+      <div class="menu-gr">
+    <input type="checkbox" id="menu">
 
-        <menu class="affichemenu">
-          <a
-            href="/index.html"
-            onclick="document.getElementById('Affiche-menu').checked=false;"
-            >Accueil</a
-          >
-          <a
-            href="/Tous-les-livres.html"
-            onclick="document.getElementById('Affiche-menu').checked=false;"
-            >Tous les livres</a
-          >
-          <a
-            href="/Proposer-un-livre.html"
-            onclick="document.getElementById('Affiche-menu').checked=false;"
-            >Proposer un livre</a
-          >
-          <a
-            href="/FAQ.html"
-            onclick="document.getElementById('Affiche-menu').checked=false;"
-            >FAQ</a
-          >
-          <a
-            href="/Contacter.html"
-            onclick="document.getElementById('Affiche-menu').checked=false;"
-            >Contacter</a
-          >
-          <a
-            href="/A-propos.html"
-            onclick="document.getElementById('Affiche-menu').checked=false;"
-            >À propos</a
-          >
-          <a
-            href="/Propriétaire-du-site.html"
-            onclick="document.getElementById('Affiche-menu').checked=false;"
-            >Propriétaire du site</a
-          >
-        </menu>
-      </nav>
+    <label for="menu" class="menu-btn">
+      <img src="icons/menu_16410453.png" alt="logo-menu">
+    </label>
+
+    <menu class="affichemenu">
+      <label for="menu" class="close-btn">✖</label>
+      <a href="#Accueil.html">Accueil</a>
+      <a href="Tous-les-livres.html">Tous les livres</a>
+      <a href="Proposer-un-livre.html">Proposer un livre</a>
+      <a href="FAQ.html">FAQ</a>
+      <a href="Contacter.html">Contacter</a>
+      <a href="A-propos.html">À propos</a>
+      <a href="Propriétaire-du-site.html">Propriétaire du site</a>
+    </menu>
+  </div>
+    </header>
+
+    
     </header>
 
     <div class="citation">
       <pre class="texte">
-                   Un lecteur vit mille 
-                        vies avant de mourir
+                           Bien venue chez OpenBookHouse
       </pre>
       <div class="cercle"></div>
     </div>
@@ -75,7 +51,7 @@
           placeholder="Rechercher par livre ou par auteur"
         />
         <button>
-          <img src="icons/recherche.png" alt="recherche-icon" />
+          <img src="/icons/recherche.png" alt="recherche-icon" />
         </button>
       </div>
     </div>
@@ -90,15 +66,15 @@
 
     <div class="grid">
       <div class="lvr-card">
-        <img src="images/Rectangle 7.png" alt="The Wicked" />
+        <img src="/images/Rectangle 7.png" alt="The Wicked" />
         <h3>The Wicked</h3>
       </div>
       <div class="lvr-card">
-        <img src="images/Rectangle 8.png" alt="Harry Potter" />
+        <img src="/images/Rectangle 8.png" alt="Harry Potter" />
         <h3>Harry Potter</h3>
       </div>
       <div class="lvr-card">
-        <img src="images/Rectangle 9.png" alt="Work: A Life Well Lived" />
+        <img src="/images/Rectangle 9.png" alt="Work: A Life Well Lived" />
         <h3>Work: A Life Well Lived</h3>
       </div>
       <div class="lvr-card">
@@ -110,23 +86,23 @@
         <h3>Well Wanted</h3>
       </div>
       <div class="lvr-card">
-        <img src="images/Rectangle 12.png" alt="The Wicked" />
+        <img src="/images/Rectangle 12.png" alt="The Wicked" />
         <h3>The Wicked</h3>
       </div>
       <div class="lvr-card">
-        <img src="images/Rectangle 13.png" alt="Frozen" />
+        <img src="/images/Rectangle 13.png" alt="Frozen" />
         <h3>Frozen</h3>
       </div>
       <div class="lvr-card">
-        <img src="images/Rectangle 14.png" alt="Work: A Life Well Lived" />
+        <img src="/images/Rectangle 14.png" alt="Work: A Life Well Lived" />
         <h3>Work: A Life Well Lived</h3>
       </div>
       <div class="lvr-card">
-        <img src="images/Rectangle 15.png" alt="Howl's Moving Castle" />
+        <img src="/images/Rectangle 15.png" alt="Howl's Moving Castle" />
         <h3>Howl's Moving Castle</h3>
       </div>
       <div class="lvr-card">
-        <img src="images/Rectangle 16.png" alt="Well Wanted" />
+        <img src="/images/Rectangle 16.png" alt="Well Wanted" />
         <h3>Well Wanted</h3>
       </div>
     </div>

@@ -31,6 +31,7 @@ body {
 }
 
 /* -------------------- Header -------------------- */
+/* -------------------- Header -------------------- */
 header {
   display: flex;
   align-items: center;
@@ -41,61 +42,115 @@ header {
 }
 
 header .logo img {
-  height: 80px;
-}
-
-nav {
+  height: 110px;
+  width: auto;
   position: relative;
+  top: -45px;
 }
 
-#Affiche-menu {
+#menu {
   display: none;
 }
 
-.menu img {
-  width: 35px;
-  height: 35px;
+.menu-gr {
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  user-select: none;
 }
 
-#Affiche-menu:checked + .menu img {
-  transform: rotate(90deg);
+.menu-btn:hover {
+  background: #3d8f8f;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
 }
 
-menu {
-  display: none;
+.menu-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.affichemenu {
   position: absolute;
   top: 55px;
   right: 0;
-  background-color: var(--white);
+  width: 220px;
+  background: var(--primary-color);
+  padding: 15px 0;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 12px;
+  display: none;
   flex-direction: column;
-  gap: 10px;
-  animation: fadeIn 0.3s ease;
-  z-index: 50;
+  align-items: center;
+  gap: 13px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease forwards;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-#Affiche-menu:checked ~ menu {
+#menu:checked ~ .affichemenu {
   display: flex;
 }
 
-menu a {
-  background-color: var(--primary-color);
-  color: black;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  z-index: 100;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-menu a:hover {
-  background-color: black;
+.close-btn {
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: black;
+}
+
+.affichemenu a {
+  display: block;
+  width: 80%;
+  text-align: center;
+  background: white;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.affichemenu a:hover {
+  background: black;
   color: var(--primary-color);
+  transform: scale(1.05);
 }
 
 /* -------------------- Citation -------------------- */

@@ -1,13 +1,13 @@
 /* -------------------- Police et variables -------------------- */
 @font-face {
-  font-family: 'Bosca';
-  src: url('/fonts/Bosca-Regular.woff2') format('woff2'),
-       url('/fonts/Bosca-Regular.woff') format('woff');
+  font-family: "Bosca";
+  src: url("/fonts/Bosca-Regular.woff2") format("woff2"),
+    url("/fonts/Bosca-Regular.woff") format("woff");
   font-display: swap;
 }
 
 :root {
-  --font-main: 'Bosca', serif;
+  --font-main: "Bosca", serif;
   --primary-color: #54bab9;
   --dark-color: #111;
   --gray-color: #777;
@@ -33,74 +33,7 @@ body {
 }
 
 /* -------------------- Header principal -------------------- */
-header {
-  background-color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 40px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-header .logo img {
-  height: 80px;
-  width: auto;
-}
-
-/* -------------------- Menu responsive -------------------- */
-nav {
-  position: relative;
-}
-
-#Affiche-menu {
-  display: none;
-}
-
-.menu img {
-  width: 38px;
-  height: auto;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-#Affiche-menu:checked + .menu img {
-  transform: rotate(90deg);
-}
-
-menu {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 0;
-  background-color: var(--white);
-  border-radius: 10px;
-  padding: 12px;
-  flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  animation: fadeIn 0.3s ease forwards;
-  z-index: 20;
-}
-
-#Affiche-menu:checked ~ menu {
-  display: flex;
-}
-
-menu a {
-  background-color: var(--primary-color);
-  color: var(--white);
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-weight: 600;
-}
-
-menu a:hover {
-  background-color: var(--secondary-color);
-  color: var(--dark-color);
-}
+/* -------------------- Header -------------------- */
 header {
   display: flex;
   align-items: center;
@@ -111,67 +44,75 @@ header {
 }
 
 header .logo img {
-  height: 80px;
-}
-
-nav {
+  height: 110px;
+  width: auto;
   position: relative;
+  top: -45px;
 }
 
-#Affiche-menu {
+#menu {
   display: none;
 }
 
-.menu img {
-  width: 35px;
-  height: 35px;
+.menu-gr {
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  user-select: none;
 }
 
-#Affiche-menu:checked + .menu img {
-  transform: rotate(90deg);
+.menu-btn:hover {
+  background: #3d8f8f;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
 }
 
-menu {
-  display: none;
+.menu-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.affichemenu {
   position: absolute;
   top: 55px;
   right: 0;
-  background-color: var(--white);
+  width: 220px;
+  background: var(--primary-color);
+  padding: 15px 0;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 12px;
+  display: none;
   flex-direction: column;
-  gap: 10px;
-  animation: fadeIn 0.3s ease;
-  z-index: 50;
+  align-items: center;
+  gap: 13px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease forwards;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-#Affiche-menu:checked ~ menu {
+#menu:checked ~ .affichemenu {
   display: flex;
 }
 
-menu a {
-  background-color: var(--primary-color);
-  color: black;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  z-index: 100;
-}
-
-menu a:hover {
-  background-color: black;
-  color: var(--primary-color);
-}
-/* -------------------- Animation -------------------- */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
@@ -179,6 +120,40 @@ menu a:hover {
   }
 }
 
+.close-btn {
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: black;
+}
+
+.affichemenu a {
+  display: block;
+  width: 80%;
+  text-align: center;
+  background: white;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.affichemenu a:hover {
+  background: black;
+  color: var(--primary-color);
+  transform: scale(1.05);
+}
 /* -------------------- Section titre (FAQ) -------------------- */
 .citation {
   position: relative;
@@ -201,17 +176,17 @@ menu a:hover {
 }
 
 .citation .texte {
-      position: absolute;
-      font-size: 28px;
-      font-weight: 700;
-      transform: translate(-50%, -25%);
-      left: 25.7%;
-      color: var(--dark-color);
-      z-index: 2;
-      -webkit-transform: translate(-50%, -25%);
-      -moz-transform: translate(-50%, -25%);
-      -ms-transform: translate(-50%, -25%);
-      -o-transform: translate(-50%, -25%);
+  position: absolute;
+  font-size: 28px;
+  font-weight: 700;
+  transform: translate(-50%, -25%);
+  left: 25.7%;
+  color: var(--dark-color);
+  z-index: 2;
+  -webkit-transform: translate(-50%, -25%);
+  -moz-transform: translate(-50%, -25%);
+  -ms-transform: translate(-50%, -25%);
+  -o-transform: translate(-50%, -25%);
 }
 
 /* -------------------- Logo central -------------------- */
@@ -229,12 +204,12 @@ article.logo img {
 
 /* -------------------- Header -------------------- */
 
-header{
-    font-size: 22px;
+header {
+  font-size: 22px;
 }
-header:hover{
-    font-size: 26px;
-    color: var(--primary-color);
+header:hover {
+  font-size: 26px;
+  color: var(--primary-color);
 }
 /* -------------------- ÉCRANS TRÈS GRANDS (≥1440px) -------------------- */
 @media (min-width: 1440px) {
@@ -483,7 +458,6 @@ header:hover{
   }
 }
 
-
 /* -------------------- Questions fréquentes -------------------- */
 .faq {
   border-bottom: 1px solid #ddd;
@@ -532,7 +506,7 @@ header:hover{
   transform: scale(1.2);
 }
 .reseaux-s img {
-    color: #54bab9;
+  color: #54bab9;
 }
 .reseaux-s img {
   width: 40px;
@@ -542,12 +516,14 @@ header:hover{
 }
 
 .reseaux-s img:hover {
-  filter: brightness(0) saturate(100%) invert(75%) sepia(22%) saturate(700%) hue-rotate(130deg);
+  filter: brightness(0) saturate(100%) invert(75%) sepia(22%) saturate(700%)
+    hue-rotate(130deg);
   transform: scale(1.05);
 }
 
 .reseaux-s img:active {
-  filter: brightness(0) saturate(100%) invert(75%) sepia(22%) saturate(700%) hue-rotate(130deg);
+  filter: brightness(0) saturate(100%) invert(75%) sepia(22%) saturate(700%)
+    hue-rotate(130deg);
   transform: scale(0.95);
 }
 
@@ -616,7 +592,8 @@ footer p {
     margin: 0 20px;
   }
 
-  .tendens, .Annons {
+  .tendens,
+  .Annons {
     margin: 20px;
   }
 
@@ -624,4 +601,3 @@ footer p {
     text-align: center;
   }
 }
-

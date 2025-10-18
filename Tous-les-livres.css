@@ -1,8 +1,8 @@
 /* -------------------- Police personnalisée -------------------- */
 @font-face {
-  font-family: 'Bosca';
-  src: url('/fonts/Bosca-Regular.woff2') format('woff2'),
-       url('/fonts/Bosca-Regular.woff') format('woff');
+  font-family: "Bosca";
+  src: url("/fonts/Bosca-Regular.woff2") format("woff2"),
+    url("/fonts/Bosca-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 /* -------------------- Variables globales -------------------- */
 :root {
-  --font-main: 'Bosca', serif;
+  --font-main: "Bosca", serif;
   --primary-color: #54bab9;
   --dark-color: #111;
   --gray-color: #777;
@@ -35,61 +35,79 @@ body {
 }
 
 /* -------------------- Header -------------------- */
+/* -------------------- Header -------------------- */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 40px;
   background-color: var(--white);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 header .logo img {
-  height: 140px;
+  height: 110px;
   width: auto;
-}
-
-nav {
   position: relative;
-  display: flex;
-  align-items: center;
+  top: -45px;
 }
 
-#Affiche-menu {
+#menu {
   display: none;
 }
 
-.menu img {
-  width: 40px;
-  height: 40px;
+.menu-gr {
+  position: relative;
+  z-index: 1000;
+}
+
+.menu-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 20px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  user-select: none;
 }
 
-#Affiche-menu:checked + .menu img {
-  transform: rotate(90deg);
+.menu-btn:hover {
+  background: #3d8f8f;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
 }
 
-menu {
-  display: none;
+.menu-btn img {
+  width: 30px;
+  height: 30px;
+}
+
+.affichemenu {
   position: absolute;
-  top: 60px;
+  top: 55px;
   right: 0;
-  background-color: white;
+  width: 220px;
+  background: var(--primary-color);
+  padding: 15px 0;
   border-radius: 10px;
-  padding: 12px;
+  display: none;
   flex-direction: column;
-  gap: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  gap: 13px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   animation: fadeIn 0.3s ease forwards;
-  z-index: 10;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-#Affiche-menu:checked ~ menu {
-  display: flex;
-}
-
-nav:hover menu {
+#menu:checked ~ .affichemenu {
   display: flex;
 }
 
@@ -104,24 +122,39 @@ nav:hover menu {
   }
 }
 
-menu a {
-  background-color: #54bab9;
-  color: black;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-align: center;
-  display: block;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+.close-btn {
+  background: transparent;
+  color: white;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
 }
 
-menu a:hover,
-menu a:active {
-  background-color: black;
-  color: #54bab9;
-  transform: translateX(4px);
+.close-btn:hover {
+  color: black;
+}
+
+.affichemenu a {
+  display: block;
+  width: 80%;
+  text-align: center;
+  background: white;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.affichemenu a:hover {
+  background: black;
+  color: var(--primary-color);
+  transform: scale(1.05);
 }
 /* -------------------- Citation -------------------- */
 .citation {
@@ -137,7 +170,7 @@ menu a:active {
   color: var(--dark-color);
   position: relative;
   left: -7%;
-  top: -40%;   
+  top: -40%;
   white-space: pre;
   z-index: 2;
 }
@@ -196,9 +229,7 @@ menu a:active {
   height: 22px;
 }
 
-
-
-
+/* --- Grille de livres --- */
 /* --- Grille de livres --- */
 .grid {
   display: grid;
@@ -242,18 +273,16 @@ menu a:active {
 
 
 
-
 /* -------------------- Footer -------------------- */
 footer {
   background-color: #000;
-    color: #fff;
+  color: #fff;
   text-align: center;
   padding: 40px 0;
   margin-top: 80px;
 }
 
 footer img {
-
   width: 60px;
   margin-bottom: 10px;
 }
@@ -261,9 +290,8 @@ img.logo {
   filter: brightness(0) invert(1);
 }
 
-
 footer p {
-    color: var(--primary-color);
+  color: var(--primary-color);
 
   font-size: 16px;
 }
@@ -313,7 +341,8 @@ footer p {
     margin: 0 20px;
   }
 
-  .tendens, .Annons {
+  .tendens,
+  .Annons {
     margin: 20px;
   }
 

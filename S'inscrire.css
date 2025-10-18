@@ -135,6 +135,35 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* -------------------- Séparateur -------------------- */
+.divider {
+  position: relative;
+  left: 325px;
+  margin: 25px 0 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--dark-color);
+}
+
+/* -------------------- Réseaux sociaux -------------------- */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-login img {
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-login img:hover {
+  transform: scale(1.1);
+}
+
+
 /* -------------------- Footer -------------------- */
 footer {
   background-color: #000;
@@ -186,3 +215,15 @@ footer p {
     padding: 10px 22px;
   }
 }
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+
+  .divider {
+  position: relative;
+  left: 900px;
+  }
+}
+
+
